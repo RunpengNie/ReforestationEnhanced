@@ -123,13 +123,6 @@ SELECT 'REFOREST_ATLAS',				64,			2,				1,				'ForestAtlas64.dds' UNION ALL
 SELECT 'UNIT_ACTION_REFOREST_ATLAS',	64,			2,				1,				'UnitAction64_Forest.dds' UNION ALL
 SELECT 'UNIT_ACTION_REFOREST_ATLAS',	45,			2,				1,				'UnitAction45_Forest.dds';
 
--- INSERT INTO IconTextureAtlases (Atlas, IconSize, IconsPerRow, IconsPerColumn, Filename)
--- SELECT 'REJUNGLE_ATLAS',                 256,      1,              1,              'ForestAtlas256.dds' UNION ALL
--- SELECT 'REJUNGLE_ATLAS',                 64,       1,              1,              'ForestAtlas64.dds' UNION ALL
--- SELECT 'UNIT_ACTION_REJUNGLE_ATLAS',     64,       1,              1,              'UnitAction64_Forest.dds' UNION ALL
--- SELECT 'UNIT_ACTION_REJUNGLE_ATLAS',     45,       1,              1,              'UnitAction45_Forest.dds';
-
-
 --------------------------------------------------------------------------------------------------
 --Artdefines
 -------------------------------------------------------------------------------------------------- 

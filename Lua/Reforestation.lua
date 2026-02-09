@@ -1,7 +1,6 @@
 -- Reforestation
 -- Author: FramedArchitecture
 -- Extended by: Jerry Nie
--- DateCreated: 2/8/2026
 --------------------------------------------------------------------
 local bExpansion2         = ContentManager.IsActive("6DA07636-4123-4018-B643-6575B4EC336B", ContentType.GAMEPLAY)
 
@@ -57,7 +56,7 @@ function PlantForest(plot)
     plot:SetImprovementType(-1)
     plot:SetFeatureType(FeatureTypes.FEATURE_FOREST, -1)
 
-    if (RandomInteger() <= 5) then
+    if (RandomInteger() <= 10) then
         local resourceInfo = GameInfo.Resources[resources[random(#resources)]]
         if resourceInfo then
             plot:SetResourceType(resourceInfo.ID, 1)
@@ -69,7 +68,7 @@ function PlantJungle(plot)
     plot:SetImprovementType(-1)
     plot:SetFeatureType(FeatureTypes.FEATURE_JUNGLE, -1)
 
-    if (RandomInteger() <= 3) then  -- slightly less chance than forest
+    if (RandomInteger() <= 6) then  -- slightly less chance than forest
         local resourceInfo = GameInfo.Resources[resources[random(#resources)]]
         if resourceInfo then
             plot:SetResourceType(resourceInfo.ID, 1)
