@@ -50,7 +50,7 @@
   </Actions>
   <EntryPoints>
     <EntryPoint type="InGameUIAddin" file="Lua/Reforestation.lua">
-      <Name>Reforestation</Name>
+      <Name>Enhanced Reforestation</Name>
       <Description>Allows workers to plant forests and jungles</Description>
     </EntryPoint>
   </EntryPoints>
