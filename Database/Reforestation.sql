@@ -66,7 +66,7 @@ SELECT 'IMPROVEMENT_PLANT_FOREST',						'FLAVOR_PRODUCTION',	5;
 --Builds 
 --------------------------------------------------------------------------------------------------
 INSERT INTO Builds (Type,	PrereqTech,				Time,	ImprovementType,			Description,			Help,							Recommendation,				EntityEvent,				HotKey,		OrderPriority,	IconAtlas,						IconIndex)
-SELECT 'BUILD_FOREST',		'TECH_FERTILIZER',		900,	'IMPROVEMENT_PLANT_FOREST',	'TXT_KEY_BUILD_FOREST',	'TXT_KEY_BUILD_FOREST_HELP',	'TXT_KEY_BUILD_FOREST_REC',	'ENTITY_EVENT_IRRIGATE',	'KB_F',		37,				'UNIT_ACTION_REFOREST_ATLAS',	0;
+SELECT 'BUILD_FOREST',		'TECH_FERTILIZER',		900,	'IMPROVEMENT_PLANT_FOREST',	'TXT_KEY_BUILD_FOREST',	'TXT_KEY_BUILD_FOREST_HELP',	'TXT_KEY_BUILD_FOREST_REC',	'ENTITY_EVENT_IRRIGATE',	'KB_F',		37,				'UNIT_ACTION_REFOREST_ATLAS',	1;
 
 INSERT INTO Builds (
     Type, PrereqTech, Time, ImprovementType,
@@ -85,7 +85,7 @@ SELECT
     'ENTITY_EVENT_IRRIGATE',      
     'KB_J',                       
     38,                           
-    'UNIT_ACTION_REFOREST_ATLAS', -- reuse forest
+    'UNIT_ACTION_REFOREST_ATLAS',
     0;
 
 
