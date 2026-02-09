@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Traditional Chinese Localization -->
+<GameData>
+	<!--TEXT STRINGS-->
+	<Language_zh_TW>
+		<Row Tag="TXT_KEY_CIV5_IMPROVEMENTS_PLANT_FOREST_TEXT">
+			<Text>重新造林是對已耗盡的現有森林、叢林和林地進行自然或人為的補充。重新造林可以透過吸收空氣中的污染和灰塵來改善人類生活品質，重建自然棲息地和生態系統，由於森林能夠促進大氣二氧化碳的生物固碳，因此可以減緩全球暖化，並且可以收穫資源，特別是木材。</Text>
+		</Row>
+		<Row Tag="TXT_KEY_IMPROVEMENT_PLANT_FOREST">
+			<Text>種植森林</Text>
+		</Row>
+		<Row Tag="TXT_KEY_IMPROVEMENT_PLANT_JUNGLE">
+			<Text>種植叢林</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILD_FOREST">
+			<Text>種植[LINK=IMPROVEMENT_PLANT_FOREST]森林[\LINK]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILD_FOREST_HELP">
+			<Text>將在此地塊種植森林，替換該地塊上的任何改良或地貌。</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILD_JUNGLE_HELP">
+			<Text>將在此地塊種植叢林，替換該地塊上的任何改良或地貌。</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILD_FOREST_REC">
+			<Text>綠化世界！</Text>
+		</Row>
+	</Language_zh_TW>
+</GameData>

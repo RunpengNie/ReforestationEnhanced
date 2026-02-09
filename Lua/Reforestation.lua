@@ -7,8 +7,9 @@ local bExpansion2         = ContentManager.IsActive("6DA07636-4123-4018-B643-657
 local plantForestID       = GameInfoTypes["IMPROVEMENT_PLANT_FOREST"]
 local plantJungleID       = GameInfoTypes["IMPROVEMENT_PLANT_JUNGLE"]  -- new
 
-local forestTechInfo      = GameInfo.Technologies["TECH_FERTILIZER"]
-local jungleTechInfo      = GameInfo.Technologies["TECH_FERTILIZER"]      -- assumed
+local forestTechInfo      = GameInfo.Technologies["TECH_CIVIL_SERVICE"]
+local jungleTechInfo      = GameInfo.Technologies["TECH_CIVIL_SERVICE"]      -- assumed
+local chemistryTechInfo   = GameInfo.Technologies["TECH_CHEMISTRY"]
 
 local random              = math.random
 local resources           = {}
@@ -34,6 +35,24 @@ function OnMapUpdateForests()
         elseif impID == plantJungleID then
             PlantJungle(plot)
         end
+    end
+end
+--------------------------------------------------------------------
+function OnChemistryResearched(teamID, techID)
+    if chemistryTechInfo and (techID == chemistryTechInfo.ID) then
+        -- Reduce build time to half for both BUILD_FOREST and BUILD_JUNGLE
+        local buildForest = GameInfo.Builds["BUILD_FOREST"]
+        local buildJungle = GameInfo.Builds["BUILD_JUNGLE"]
+        
+        if buildForest then
+            DB.Query("UPDATE Builds SET Time = 600 WHERE Type = 'BUILD_FOREST'")
+        end
+        if buildJungle then
+            DB.Query("UPDATE Builds SET Time = 600 WHERE Type = 'BUILD_JUNGLE'")
+        end
+        
+        -- Remove this listener once Chemistry is researched
+        GameEvents.TeamTechResearched.Remove(OnChemistryResearched)
     end
 end
 --------------------------------------------------------------------
@@ -81,6 +100,11 @@ function RandomInteger(min, max)
     local max = max and ((max - min) + 1) or 100
     return min + Game.Rand(max, "")
 end
+    
+    -- Listen for Chemistry tech to reduce build time
+    if chemistryTechInfo and not Teams[Game.GetActiveTeam()]:IsHasTech(chemistryTechInfo.ID) then
+        GameEvents.TeamTechResearched.Add(OnChemistryResearched)
+    end
 --------------------------------------------------------------------
 function Initialize()
     if bExpansion2 then

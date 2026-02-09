@@ -66,7 +66,7 @@ SELECT 'IMPROVEMENT_PLANT_FOREST',						'FLAVOR_PRODUCTION',	5;
 --Builds 
 --------------------------------------------------------------------------------------------------
 INSERT INTO Builds (Type,	PrereqTech,				Time,	ImprovementType,			Description,			Help,							Recommendation,				EntityEvent,				HotKey,		OrderPriority,	IconAtlas,						IconIndex)
-SELECT 'BUILD_FOREST',		'TECH_FERTILIZER',		900,	'IMPROVEMENT_PLANT_FOREST',	'TXT_KEY_BUILD_FOREST',	'TXT_KEY_BUILD_FOREST_HELP',	'TXT_KEY_BUILD_FOREST_REC',	'ENTITY_EVENT_IRRIGATE',	'KB_F',		37,				'UNIT_ACTION_REFOREST_ATLAS',	1;
+SELECT 'BUILD_FOREST',		'TECH_CIVIL_SERVICE',		1200,	'IMPROVEMENT_PLANT_FOREST',	'TXT_KEY_BUILD_FOREST',	'TXT_KEY_BUILD_FOREST_HELP',	'TXT_KEY_BUILD_FOREST_REC',	'ENTITY_EVENT_IRRIGATE',	'KB_F',		37,				'UNIT_ACTION_REFOREST_ATLAS',	1;
 
 INSERT INTO Builds (
     Type, PrereqTech, Time, ImprovementType,
@@ -76,8 +76,8 @@ INSERT INTO Builds (
 )
 SELECT 
     'BUILD_JUNGLE',               -- Identifier
-    'TECH_FERTILIZER',            
-    900,                          -- same as reforest
+    'TECH_CIVIL_SERVICE',         
+    1200,                         -- same as reforest
     'IMPROVEMENT_PLANT_JUNGLE',   
     'TXT_KEY_BUILD_JUNGLE',       
     'TXT_KEY_BUILD_JUNGLE_HELP',  
@@ -93,14 +93,14 @@ SELECT
 --Build Features 
 --------------------------------------------------------------------------------------------------
 INSERT INTO BuildFeatures (BuildType,	FeatureType,		PrereqTech,				Time,   Production,	Remove)
-SELECT 'BUILD_FOREST',					'FEATURE_FOREST',	'TECH_FERTILIZER',		900,	40,			1 UNION ALL
-SELECT 'BUILD_FOREST',					'FEATURE_MARSH',	'TECH_FERTILIZER',		900,	0,			1;
+SELECT 'BUILD_FOREST',					'FEATURE_FOREST',	'TECH_CIVIL_SERVICE',	1200,	40,			1 UNION ALL
+SELECT 'BUILD_FOREST',					'FEATURE_MARSH',	'TECH_CIVIL_SERVICE',	1200,	0,			1;
 
 INSERT INTO BuildFeatures (
     BuildType, FeatureType, PrereqTech,
     Time, Production, Remove
 )
-SELECT 'BUILD_JUNGLE', 'FEATURE_MARSH',  'TECH_FERTILIZER', 900, 0,  1;
+SELECT 'BUILD_JUNGLE', 'FEATURE_MARSH',  'TECH_CIVIL_SERVICE', 1200, 0,  1;
 
 
 --------------------------------------------------------------------------------------------------
