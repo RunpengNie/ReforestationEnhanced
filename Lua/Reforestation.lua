@@ -1,7 +1,7 @@
 -- Reforestation
 -- Author: FramedArchitecture
--- Extended by: You
--- DateCreated: 11/9/2012
+-- Extended by: Jerry Nie
+-- DateCreated: 2/8/2026
 --------------------------------------------------------------------
 local bExpansion2         = ContentManager.IsActive("6DA07636-4123-4018-B643-6575B4EC336B", ContentType.GAMEPLAY)
 

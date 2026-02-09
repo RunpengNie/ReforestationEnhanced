@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Mod id="5114ca56-5621-43cb-a024-e0884b6045da" version="9">
+<Mod id="5114ca56-5621-43cb-a024-e0884b6045da" version="1">
   <Properties>
     <Name>Reforestation</Name>
-    <Teaser>Allows Workers to plant Forests. [NEWLINE][NEWLINE][COLOR_POSITIVE_TEXT]For Vanilla, G&amp;K, BNW, any DLC[ENDCOLOR]</Teaser>
-    <Description>[ICON_BULLET]Upon discovering Fertilizer, Plant Forests on Plains, Grassland, Tundra and Snow tiles (replaces existing features or improvements). 
+    <Teaser>Allows Workers to plant Forests and Jungles. [NEWLINE][NEWLINE][COLOR_POSITIVE_TEXT]For Vanilla, G&amp;K, BNW, any DLC[ENDCOLOR]</Teaser>
+    <Description>[ICON_BULLET]Upon discovering Fertilizer, Plant Forests on Plains, Grassland, Tundra and Snow tiles, or Plant Jungles on Plains and Grassland (replaces existing features or improvements). 
 [NEWLINE][NEWLINE][ICON_BULLET]Newly forested tiles have a small chance to gain a forest resource, like deer or silk. 
 [NEWLINE][NEWLINE][ICON_BULLET]Can be built on tiles outside a Civilization's borders.</Description>
-    <Authors>FramedArchitecture</Authors>
+    <Authors>JerryNie</Authors>
     <HideSetupGame>0</HideSetupGame>
     <AffectsSavedGames>1</AffectsSavedGames>
     <MinCompatibleSaveVersion>0</MinCompatibleSaveVersion>
@@ -49,7 +49,7 @@
   <EntryPoints>
     <EntryPoint type="InGameUIAddin" file="Lua/Reforestation.lua">
       <Name>Reforestation</Name>
-      <Description>Allows workers to plant forests</Description>
+      <Description>Allows workers to plant forests and jungles</Description>
     </EntryPoint>
   </EntryPoints>
 </Mod>
