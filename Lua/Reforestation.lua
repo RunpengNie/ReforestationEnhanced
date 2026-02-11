@@ -5,10 +5,10 @@
 local bExpansion2         = ContentManager.IsActive("6DA07636-4123-4018-B643-6575B4EC336B", ContentType.GAMEPLAY)
 
 local plantForestID       = GameInfoTypes["IMPROVEMENT_PLANT_FOREST"]
-local plantJungleID       = GameInfoTypes["IMPROVEMENT_PLANT_JUNGLE"]  -- new
+local plantJungleID       = GameInfoTypes["IMPROVEMENT_PLANT_JUNGLE"]
 
 local forestTechInfo      = GameInfo.Technologies["TECH_CIVIL_SERVICE"]
-local jungleTechInfo      = GameInfo.Technologies["TECH_CIVIL_SERVICE"]      -- assumed
+local jungleTechInfo      = GameInfo.Technologies["TECH_CIVIL_SERVICE"]
 local chemistryTechInfo   = GameInfo.Technologies["TECH_CHEMISTRY"]
 
 local random              = math.random
@@ -40,16 +40,9 @@ end
 --------------------------------------------------------------------
 function OnChemistryResearched(teamID, techID)
     if chemistryTechInfo and (techID == chemistryTechInfo.ID) then
-        -- Reduce build time to half for both BUILD_FOREST and BUILD_JUNGLE
-        local buildForest = GameInfo.Builds["BUILD_FOREST"]
-        local buildJungle = GameInfo.Builds["BUILD_JUNGLE"]
-        
-        if buildForest then
-            DB.Query("UPDATE Builds SET Time = 600 WHERE Type = 'BUILD_FOREST'")
-        end
-        if buildJungle then
-            DB.Query("UPDATE Builds SET Time = 600 WHERE Type = 'BUILD_JUNGLE'")
-        end
+        -- Remove slow versions of builds, keeping only fast versions
+        DB.Query("DELETE FROM Unit_Builds WHERE BuildType = 'BUILD_FOREST'")
+        DB.Query("DELETE FROM Unit_Builds WHERE BuildType = 'BUILD_JUNGLE'")
         
         -- Remove this listener once Chemistry is researched
         GameEvents.TeamTechResearched.Remove(OnChemistryResearched)
@@ -87,7 +80,7 @@ function PlantJungle(plot)
     plot:SetImprovementType(-1)
     plot:SetFeatureType(FeatureTypes.FEATURE_JUNGLE, -1)
 
-    if (RandomInteger() <= 6) then  -- slightly less chance than forest
+    if (RandomInteger() <= 6) then
         local resourceInfo = GameInfo.Resources[resources[random(#resources)]]
         if resourceInfo then
             plot:SetResourceType(resourceInfo.ID, 1)
@@ -100,11 +93,6 @@ function RandomInteger(min, max)
     local max = max and ((max - min) + 1) or 100
     return min + Game.Rand(max, "")
 end
-    
-    -- Listen for Chemistry tech to reduce build time
-    if chemistryTechInfo and not Teams[Game.GetActiveTeam()]:IsHasTech(chemistryTechInfo.ID) then
-        GameEvents.TeamTechResearched.Add(OnChemistryResearched)
-    end
 --------------------------------------------------------------------
 function Initialize()
     if bExpansion2 then
@@ -122,6 +110,11 @@ function Initialize()
         if not bInitialized then
             GameEvents.TeamTechResearched.Add(OnTechResearched)
         end
+    end
+    
+    -- Listen for Chemistry tech to switch to fast builds
+    if chemistryTechInfo and not Teams[Game.GetActiveTeam()]:IsHasTech(chemistryTechInfo.ID) then
+        GameEvents.TeamTechResearched.Add(OnChemistryResearched)
     end
 end
 Initialize()
