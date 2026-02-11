@@ -18,5 +18,20 @@
 		<Row Tag="TXT_KEY_BUILD_FOREST_REC">
 			<Text>Reforest the world!</Text>
 		</Row>
+		<Row Tag="TXT_KEY_CIV5_IMPROVEMENTS_PLANT_JUNGLE_TEXT">
+			<Text>Jungle cultivation expands dense tropical forests. A new jungle can only be planted adjacent to existing jungle terrain. This method provides a natural way to restore and expand jungle ecosystems in tropical regions.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_IMPROVEMENT_PLANT_JUNGLE">
+			<Text>Plant Jungle</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILD_JUNGLE">
+			<Text>Plant a [LINK=IMPROVEMENT_PLANT_JUNGLE]Jungle[\LINK]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILD_JUNGLE_HELP">
+			<Text>Will Plant Jungle, replacing any Improvement or Feature on this tile. Can only be used on tiles adjacent to existing Jungle.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILD_JUNGLE_REC">
+			<Text>Expand the jungle!</Text>
+		</Row>
 	</Language_en_US>
 </GameData>
