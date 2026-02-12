@@ -66,7 +66,7 @@ SELECT 'IMPROVEMENT_PLANT_FOREST',						'FLAVOR_PRODUCTION',	5;
 --Builds 
 --------------------------------------------------------------------------------------------------
 INSERT INTO Builds (Type,	PrereqTech,				Time,	ImprovementType,			Description,			Help,							Recommendation,				EntityEvent,				HotKey,		OrderPriority,	IconAtlas,						IconIndex)
-SELECT 'BUILD_FOREST',		'TECH_CIVIL_SERVICE',		1200,	'IMPROVEMENT_PLANT_FOREST',	'TXT_KEY_BUILD_FOREST',	'TXT_KEY_BUILD_FOREST_HELP',	'TXT_KEY_BUILD_FOREST_REC',	'ENTITY_EVENT_IRRIGATE',	'KB_F',		37,				'UNIT_ACTION_REFOREST_ATLAS',	1;
+SELECT 'BUILD_FOREST',		'TECH_FERTILIZER',		900,	'IMPROVEMENT_PLANT_FOREST',	'TXT_KEY_BUILD_FOREST',	'TXT_KEY_BUILD_FOREST_HELP',	'TXT_KEY_BUILD_FOREST_REC',	'ENTITY_EVENT_IRRIGATE',	'KB_F',		37,				'UNIT_ACTION_REFOREST_ATLAS',	1;
 
 INSERT INTO Builds (
     Type, PrereqTech, Time, ImprovementType,
@@ -76,32 +76,8 @@ INSERT INTO Builds (
 )
 SELECT 
     'BUILD_JUNGLE',               -- Identifier
-    'TECH_CIVIL_SERVICE',         
-    1200,                         -- same as reforest
-    'IMPROVEMENT_PLANT_JUNGLE',   
-    'TXT_KEY_BUILD_JUNGLE',       
-    'TXT_KEY_BUILD_JUNGLE_HELP',  
-    'TXT_KEY_BUILD_JUNGLE_REC',   
-    'ENTITY_EVENT_IRRIGATE',      
-    'KB_J',                       
-    38,                           
-    'UNIT_ACTION_REFOREST_ATLAS',
-    0;
-
--- Accelerated versions after Chemistry tech
-INSERT INTO Builds (Type,	PrereqTech,				Time,	ImprovementType,			Description,			Help,							Recommendation,				EntityEvent,				HotKey,		OrderPriority,	IconAtlas,						IconIndex)
-SELECT 'BUILD_FOREST_FAST',	'TECH_CHEMISTRY',		600,	'IMPROVEMENT_PLANT_FOREST',	'TXT_KEY_BUILD_FOREST',	'TXT_KEY_BUILD_FOREST_HELP',	'TXT_KEY_BUILD_FOREST_REC',	'ENTITY_EVENT_IRRIGATE',	'KB_F',		37,				'UNIT_ACTION_REFOREST_ATLAS',	1;
-
-INSERT INTO Builds (
-    Type, PrereqTech, Time, ImprovementType,
-    Description, Help, Recommendation,
-    EntityEvent, HotKey, OrderPriority,
-    IconAtlas, IconIndex
-)
-SELECT 
-    'BUILD_JUNGLE_FAST',          -- Accelerated jungle
-    'TECH_CHEMISTRY',             
-    600,                          -- half the time
+    'TECH_FERTILIZER',            
+    900,                          -- same as reforest
     'IMPROVEMENT_PLANT_JUNGLE',   
     'TXT_KEY_BUILD_JUNGLE',       
     'TXT_KEY_BUILD_JUNGLE_HELP',  
@@ -117,25 +93,14 @@ SELECT
 --Build Features 
 --------------------------------------------------------------------------------------------------
 INSERT INTO BuildFeatures (BuildType,	FeatureType,		PrereqTech,				Time,   Production,	Remove)
-SELECT 'BUILD_FOREST',					'FEATURE_FOREST',	'TECH_CIVIL_SERVICE',	1200,	40,			1 UNION ALL
-SELECT 'BUILD_FOREST',					'FEATURE_MARSH',	'TECH_CIVIL_SERVICE',	1200,	0,			1;
+SELECT 'BUILD_FOREST',					'FEATURE_FOREST',	'TECH_FERTILIZER',		900,	40,			1 UNION ALL
+SELECT 'BUILD_FOREST',					'FEATURE_MARSH',	'TECH_FERTILIZER',		900,	0,			1;
 
 INSERT INTO BuildFeatures (
     BuildType, FeatureType, PrereqTech,
     Time, Production, Remove
 )
-SELECT 'BUILD_JUNGLE', 'FEATURE_MARSH',  'TECH_CIVIL_SERVICE', 1200, 0,  1;
-
--- Fast versions with Chemistry
-INSERT INTO BuildFeatures (BuildType,	FeatureType,		PrereqTech,				Time,   Production,	Remove)
-SELECT 'BUILD_FOREST_FAST',				'FEATURE_FOREST',	'TECH_CHEMISTRY',	600,	40,			1 UNION ALL
-SELECT 'BUILD_FOREST_FAST',				'FEATURE_MARSH',	'TECH_CHEMISTRY',	600,	0,			1;
-
-INSERT INTO BuildFeatures (
-    BuildType, FeatureType, PrereqTech,
-    Time, Production, Remove
-)
-SELECT 'BUILD_JUNGLE_FAST', 'FEATURE_MARSH',  'TECH_CHEMISTRY', 600, 0,  1;
+SELECT 'BUILD_JUNGLE', 'FEATURE_MARSH',  'TECH_FERTILIZER', 900, 0,  1;
 
 
 --------------------------------------------------------------------------------------------------
@@ -147,15 +112,6 @@ FROM Units WHERE Class = 'UNITCLASS_WORKER';
 
 INSERT INTO Unit_Builds (UnitType, BuildType)
 SELECT Type, 'BUILD_JUNGLE'
-FROM Units WHERE Class = 'UNITCLASS_WORKER';
-
--- Fast versions
-INSERT INTO Unit_Builds (UnitType, BuildType)
-SELECT Type, 'BUILD_FOREST_FAST'
-FROM Units WHERE Class = 'UNITCLASS_WORKER';
-
-INSERT INTO Unit_Builds (UnitType, BuildType)
-SELECT Type, 'BUILD_JUNGLE_FAST'
 FROM Units WHERE Class = 'UNITCLASS_WORKER';
 
 --------------------------------------------------------------------------------------------------
@@ -204,6 +160,4 @@ WHEN NEW.Class = 'UNITCLASS_WORKER'
 BEGIN
     INSERT INTO Unit_Builds (UnitType, BuildType) VALUES (NEW.Type, 'BUILD_FOREST');
     INSERT INTO Unit_Builds (UnitType, BuildType) VALUES (NEW.Type, 'BUILD_JUNGLE');
-    INSERT INTO Unit_Builds (UnitType, BuildType) VALUES (NEW.Type, 'BUILD_FOREST_FAST');
-    INSERT INTO Unit_Builds (UnitType, BuildType) VALUES (NEW.Type, 'BUILD_JUNGLE_FAST');
 END;
