@@ -12,17 +12,29 @@
 		<Row Tag="TXT_KEY_IMPROVEMENT_PLANT_JUNGLE">
 			<Text>種植叢林</Text>
 		</Row>
+		<Row Tag="TXT_KEY_CIV5_IMPROVEMENTS_PLANT_FOREST_HELP">
+			<Text>在此地塊上長出森林，替換該地塊上既有的地貌或改良設施。新生成的森林有小機率出現戰略或奢侈品資源。</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_IMPROVEMENTS_PLANT_JUNGLE_HELP">
+			<Text>在此地塊上長出叢林，替換該地塊上既有的地貌或改良設施。新生成的叢林有小機率出現戰略或奢侈品資源。</Text>
+		</Row>
 		<Row Tag="TXT_KEY_BUILD_FOREST">
 			<Text>種植[LINK=IMPROVEMENT_PLANT_FOREST]森林[\LINK]</Text>
 		</Row>
 		<Row Tag="TXT_KEY_BUILD_FOREST_HELP">
 			<Text>將在此地塊種植森林，替換該地塊上的任何改良或地貌。</Text>
 		</Row>
+		<Row Tag="TXT_KEY_BUILD_FOREST_REC">
+			<Text>綠化世界！</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILD_JUNGLE">
+			<Text>種植[LINK=IMPROVEMENT_PLANT_JUNGLE]叢林[\LINK]</Text>
+		</Row>
 		<Row Tag="TXT_KEY_BUILD_JUNGLE_HELP">
 			<Text>將在此地塊種植叢林，替換該地塊上的任何改良或地貌。</Text>
 		</Row>
-		<Row Tag="TXT_KEY_BUILD_FOREST_REC">
-			<Text>綠化世界！</Text>
+		<Row Tag="TXT_KEY_BUILD_JUNGLE_REC">
+			<Text>在這裡種下叢林！</Text>
 		</Row>
 	</Language_zh_TW>
 </GameData>

@@ -9,6 +9,15 @@
 		<Row Tag="TXT_KEY_IMPROVEMENT_PLANT_FOREST">
 			<Text>Planter une forêt</Text>
 		</Row>
+		<Row Tag="TXT_KEY_IMPROVEMENT_PLANT_JUNGLE">
+			<Text>Planter une jungle</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_IMPROVEMENTS_PLANT_FOREST_HELP">
+			<Text>Fait pousser une forêt sur cette case, remplaçant tout aménagement ou particularité existant. La nouvelle forêt a une faible chance de contenir une ressource.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_IMPROVEMENTS_PLANT_JUNGLE_HELP">
+			<Text>Fait pousser une jungle sur cette case, remplaçant tout aménagement ou particularité existant. La nouvelle jungle a une faible chance de contenir une ressource.</Text>
+		</Row>
 		<Row Tag="TXT_KEY_BUILD_FOREST">
 			<Text>[LINK=IMPROVEMENT_PLANT_FOREST]Planter une forêt[\LINK]</Text>
 		</Row>
@@ -17,6 +26,15 @@
 		</Row>
 		<Row Tag="TXT_KEY_BUILD_FOREST_REC">
 			<Text>Reboisez le monde !</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILD_JUNGLE">
+			<Text>[LINK=IMPROVEMENT_PLANT_JUNGLE]Planter une jungle[\LINK]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILD_JUNGLE_HELP">
+			<Text>Plantera une jungle, remplaçant toute amélioration présente sur cette case.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILD_JUNGLE_REC">
+			<Text>Faites pousser une jungle !</Text>
 		</Row>
 	</Language_fr_FR>
 </GameData>

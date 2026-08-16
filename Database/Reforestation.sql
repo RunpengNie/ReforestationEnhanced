@@ -1,8 +1,16 @@
 --------------------------------------------------------------------------------------------------
 --Improvements 
 --------------------------------------------------------------------------------------------------
-INSERT INTO Improvements (Type,		DestroyedWhenPillaged,	OutsideBorders,	Description,						Help,											Civilopedia,									ArtDefineTag,						IconAtlas,			PortraitIndex)
-SELECT 'IMPROVEMENT_PLANT_FOREST',	1,						1,				'TXT_KEY_IMPROVEMENT_PLANT_FOREST',	'TXT_KEY_CIV5_IMPROVEMENTS_PLANT_FOREST_HELP',	'TXT_KEY_CIV5_IMPROVEMENTS_PLANT_FOREST_TEXT',	'ART_DEF_IMPROVEMENT_PLANT_FOREST',	'REFOREST_ATLAS',	0;
+INSERT INTO Improvements (
+    Type, DestroyedWhenPillaged, OutsideBorders,
+    Description, Help, Civilopedia,
+    ArtDefineTag, IconAtlas, PortraitIndex)
+SELECT 
+    'IMPROVEMENT_PLANT_FOREST',	1, 1,
+    'TXT_KEY_IMPROVEMENT_PLANT_FOREST',	
+    'TXT_KEY_CIV5_IMPROVEMENTS_PLANT_FOREST_HELP',
+    'TXT_KEY_CIV5_IMPROVEMENTS_PLANT_FOREST_TEXT',
+    'ART_DEF_IMPROVEMENT_PLANT_FOREST',	'REFOREST_ATLAS',	0;
 
 -- Jungle
 INSERT INTO Improvements (
@@ -136,19 +144,20 @@ INSERT INTO ArtDefine_Landmarks (Era,	State,		Scale,	ImprovementType,					Layout
 SELECT 'Any',							'Any',		1.0,	'ART_DEF_IMPROVEMENT_PLANT_FOREST', 'SNAPSHOT',		'ART_DEF_RESOURCE_NONE',	'resource_timber.fxsxml',	1;
 
 --jungle
-INSERT INTO ArtDefine_StrategicView (StrategicViewType, TileType, Asset)
-SELECT 'ART_DEF_IMPROVEMENT_PLANT_JUNGLE', 'Improvement', 'SV_PlantForest.dds';
+-- NOTE: This might be redundanct so commented out for now. 
+-- INSERT INTO ArtDefine_StrategicView (StrategicViewType, TileType, Asset)
+-- SELECT 'ART_DEF_IMPROVEMENT_PLANT_JUNGLE', 'Improvement', 'SV_PlantForest.dds';
 
-INSERT INTO ArtDefine_LandmarkTypes (Type, LandmarkType, FriendlyName)
-SELECT 'ART_DEF_IMPROVEMENT_PLANT_JUNGLE', 'Improvement', 'PlantJungle';
+-- INSERT INTO ArtDefine_LandmarkTypes (Type, LandmarkType, FriendlyName)
+-- SELECT 'ART_DEF_IMPROVEMENT_PLANT_JUNGLE', 'Improvement', 'PlantJungle';
 
-INSERT INTO ArtDefine_Landmarks (
-    Era, State, Scale, ImprovementType,
-    LayoutHandler, ResourceType, Model, TerrainContour
-)
-SELECT
-    'Any', 'Any', 1.0, 'ART_DEF_IMPROVEMENT_PLANT_JUNGLE',
-    'SNAPSHOT', 'ART_DEF_RESOURCE_NONE', 'resource_timber.fxsxml', 1;
+-- INSERT INTO ArtDefine_Landmarks (
+--     Era, State, Scale, ImprovementType,
+--     LayoutHandler, ResourceType, Model, TerrainContour
+-- )
+-- SELECT
+--     'Any', 'Any', 1.0, 'ART_DEF_IMPROVEMENT_PLANT_JUNGLE',
+--     'SNAPSHOT', 'ART_DEF_RESOURCE_NONE', 'resource_timber.fxsxml', 1;
 
 
 -------------------------------------------------------------------------------------------------- 
